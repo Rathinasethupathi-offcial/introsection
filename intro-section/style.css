@@ -60,10 +60,29 @@ button
 .clients
 {
 margin-top: 20px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-gap: 15px;
-height: 20px;
+display: block;
 
+}
+h1
+{
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    animation:typing 2s steps(22),blink.5s step-end infinite;
+}
+@keyframes typing
+{
+    from
+    {
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+    }
+
+@keyframes blink{
+    50%{
+        border-color:transparent
+        }
 }
