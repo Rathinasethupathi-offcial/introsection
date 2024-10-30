@@ -1,88 +1,157 @@
-body
-{
-    height: 100%;
-    justify-content: center;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header
-{
-display: flex;
-height: 20px;
-justify-content: space-around;
-margin: 20px;
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 80px; /* To avoid content overlapping with fixed navbar */
 }
 
-.register
-{
-    border: 1px solid;
-    border-radius: 2px;
-    padding: 10px
+/* Navbar at the Top */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    color: rgb(92, 92, 92);
+    z-index: 1000;
+    background-color: rgb(255, 255, 255);
 }
 
-.menus
+/* Logo */
+.logo {
+    height: 20px;
+}
+
+/* Menus */
+.menus {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.menus li a {
+    color: rgb(159, 159, 159);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px;
+    transition: color 0.3s;
+}
+
+.menus li a:hover {
+    color: #00aaff;
+}
+
+
+.login, .register {
+    cursor: pointer;
+    padding: 8px 12px;
+}
+.auth-options
 {
     display: flex;
 }
-
-.overall
-{
-   display: flex;
-   align-items: center;
-   margin: 40px;
+.register {
+    border: 1px solid rgb(92, 92, 92);
+    border-radius: 4px;
 }
 
-.img
-{
-object-fit: cover;
-display: flex;
-justify-content: center;
-}
-
-.image
-{
-    width: 50%;
+/* Overall Layout */
+.overall {
     display: flex;
-}
-
-.content
-{
+    align-items: center;
+    gap: 40px;
     padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-button
-{
+/* Content Section */
+.content {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #757575;
+}
+
+button {
     background-color: black;
     color: white;
+    border: none;
     border-radius: 8px;
-    padding: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.clients
-{
-margin-top: 20px;
-display: block;
-
+button:hover {
+    background-color: #333;
 }
-h1
-{
-    overflow: hidden;
-    white-space: nowrap;
+
+/* Clients Logos */
+.clients {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.client-logos {
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    width: 90px;
+   
+}
+
+.client-logos:hover {
+    opacity: 1;
+}
+
+/* Hero Image */
+.img {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    height: 500px;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Typing Animation for Heading */
+h1 {
     border-right: 2px solid black;
-    animation:typing 2s steps(22),blink.5s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(12), blink 0.5s step-end;
 }
-@keyframes typing
-{
-    from
-    {
-        width: 0;
-    }
-    to{
-        width: 100%;
-    }
-    }
 
-@keyframes blink{
-    50%{
-        border-color:transparent
-        }
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
 }
